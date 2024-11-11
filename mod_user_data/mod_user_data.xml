@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>mod_User_Data</name>
+    <title>User Data</title>
+    <description>Displays a list of users based on selected user groups and customizable fields.</description>
+    <files>
+        <filename module="mod_user_data">mod_user_data.php</filename>
+        <folder>tmpl</folder>
+        <folder>src</folder>
+    </files>
+    <config>
+        <fields name="params">
+           
+              <fieldset name="user_filter" label="User Group Filter">
+                <field name="user_groups" type="usergrouplist" multiple="true" label="Select User Groups" description="Choose user groups to display." />
+            </fieldset>
+
+            <fieldset name="user_details" label="User Details">
+                <field name="show_name" type="checkbox" label="Show Full Name" default="1" />
+                <field name="show_username" type="checkbox" label="Show Username" default="0" />
+                <field name="show_email" type="checkbox" label="Show Email Address" default="0" />
+                <field name="show_register_date" type="checkbox" label="Show Registration Date" default="0" />
+                <field name="show_last_login" type="checkbox" label="Show Last Login Date" default="0" />
+                <field name="show_user_group" type="checkbox" label="Show User Group" default="0" />
+            </fieldset>
+
+            <!-- Access Control -->
+            <fieldset name="access_control" label="Access Control">
+                <field name="restrict_access" type="usergrouplist" multiple="true" label="Allowed User Roles" description="Select roles that can view this module." />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
